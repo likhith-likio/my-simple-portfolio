@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   const [hovered, setHovered] = useState(false);
-  
+
   // Scroll to project section function
   const scrollToProjects = () => {
     const projectsSection = document.querySelector('section:nth-of-type(3)');
@@ -11,7 +11,7 @@ export default function Hero() {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   // Scroll to contact section function
   const scrollToContact = () => {
     const contactSection = document.querySelector('section:nth-of-type(4)');
@@ -19,7 +19,7 @@ export default function Hero() {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   return (
     <motion.section
       className="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 to-black text-gray-200 text-center relative overflow-hidden"
@@ -135,6 +135,23 @@ export default function Hero() {
         </motion.div>
       </motion.div>
       
+      {/* Animated Dev Emoji on the Right */}
+      <motion.div
+        className="absolute right-10 bottom-10 text-6xl md:text-7xl"
+        animate={{ 
+          y: [0, -10, 0], 
+          rotate: [0, 5, -5, 0] 
+        }}
+        transition={{
+          repeat: Infinity,
+          duration: 2,
+          ease: "easeInOut"
+        }}
+      >
+        👨‍💻
+      </motion.div>
+
+      {/* Scroll Down Indicator */}
       <motion.div
         className="absolute bottom-8 cursor-pointer"
         initial={{ opacity: 0 }}
