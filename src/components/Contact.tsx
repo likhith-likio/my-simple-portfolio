@@ -2,43 +2,43 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter, FaDribbble } from "react-icons/fa";
 
-// Theme options
+// Updated darker themes
 const themes = [
   {
-    name: "Cyberpunk",
-    bgGradient: "from-[#FF007F] to-[#5700FF]",
-    textColor: "text-white",
-    formBg: "bg-white bg-opacity-10",
-    inputBg: "bg-white bg-opacity-20",
-    buttonGradient: "from-[#FFD700] to-[#FF007F]",
-    borderColor: "border-pink-300"
+    name: "Dark Cyberpunk",
+    bgGradient: "from-[#0A001F] to-[#220033]",
+    textColor: "text-gray-200",
+    formBg: "bg-black bg-opacity-40",
+    inputBg: "bg-black bg-opacity-70",
+    buttonGradient: "from-[#7B0057] to-[#270033]",
+    borderColor: "border-purple-900"
   },
   {
-    name: "Midnight",
-    bgGradient: "from-[#0F2027] to-[#203A43]",
-    textColor: "text-gray-100",
-    formBg: "bg-gray-800 bg-opacity-50",
-    inputBg: "bg-gray-700 bg-opacity-50",
-    buttonGradient: "from-indigo-600 to-blue-500",
-    borderColor: "border-gray-600"
+    name: "Abyss",
+    bgGradient: "from-[#000C14] to-[#0A1A24]",
+    textColor: "text-gray-300",
+    formBg: "bg-gray-900 bg-opacity-70",
+    inputBg: "bg-gray-900 bg-opacity-80",
+    buttonGradient: "from-gray-800 to-gray-700",
+    borderColor: "border-gray-800"
   },
   {
-    name: "Sunset",
-    bgGradient: "from-[#FF512F] to-[#DD2476]",
-    textColor: "text-white",
-    formBg: "bg-white bg-opacity-10",
-    inputBg: "bg-white bg-opacity-20",
-    buttonGradient: "from-yellow-400 to-orange-500",
-    borderColor: "border-orange-300"
+    name: "Ember",
+    bgGradient: "from-[#190000] to-[#330F0F]",
+    textColor: "text-gray-200",
+    formBg: "bg-black bg-opacity-50",
+    inputBg: "bg-black bg-opacity-70",
+    buttonGradient: "from-red-900 to-red-800",
+    borderColor: "border-red-900"
   },
   {
-    name: "Nature",
-    bgGradient: "from-[#134E5E] to-[#71B280]",
-    textColor: "text-white",
-    formBg: "bg-white bg-opacity-10",
-    inputBg: "bg-white bg-opacity-20",
-    buttonGradient: "from-green-400 to-emerald-500",
-    borderColor: "border-green-300"
+    name: "Woodland",
+    bgGradient: "from-[#0C1F14] to-[#0A1A0F]",
+    textColor: "text-gray-300",
+    formBg: "bg-black bg-opacity-40",
+    inputBg: "bg-black bg-opacity-60",
+    buttonGradient: "from-green-900 to-emerald-800",
+    borderColor: "border-green-900"
   }
 ];
 
@@ -87,13 +87,13 @@ export default function Contact() {
     }, 1500);
   };
 
-  // Social links with more options
+  // Social links with darker colors
   const socialLinks = [
-    { icon: FaGithub, link: "https://github.com", color: "#171515", label: "GitHub" },
-    { icon: FaLinkedin, link: "https://linkedin.com", color: "#0A66C2", label: "LinkedIn" },
-    { icon: FaTwitter, link: "https://twitter.com", color: "#1DA1F2", label: "Twitter" },
-    { icon: FaDribbble, link: "https://dribbble.com", color: "#EA4C89", label: "Dribbble" },
-    { icon: FaEnvelope, link: "mailto:example@example.com", color: "#FF5733", label: "Email" },
+    { icon: FaGithub, link: "https://github.com", color: "#111111", label: "GitHub" },
+    { icon: FaLinkedin, link: "https://linkedin.com", color: "#0A4882", label: "LinkedIn" },
+    { icon: FaTwitter, link: "https://twitter.com", color: "#0A5585", label: "Twitter" },
+    { icon: FaDribbble, link: "https://dribbble.com", color: "#93274F", label: "Dribbble" },
+    { icon: FaEnvelope, link: "mailto:example@example.com", color: "#7D2919", label: "Email" },
   ];
 
   return (
@@ -106,7 +106,7 @@ export default function Contact() {
     >
       {/* Theme Switcher */}
       <motion.button
-        className="absolute top-8 right-8 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-opacity-30 transition-all"
+        className="absolute top-8 right-8 bg-black bg-opacity-40 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-opacity-60 transition-all"
         onClick={cycleTheme}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -125,15 +125,15 @@ export default function Contact() {
             📬 Contact Me
           </motion.h2>
           <motion.div 
-            className="w-28 h-1 bg-white mx-auto rounded-full"
+            className="w-28 h-1 bg-gray-500 mx-auto rounded-full"
             initial={{ width: 0 }}
             animate={{ width: 112 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           />
           <motion.p
-            className="mt-6 text-xl max-w-lg mx-auto opacity-80"
+            className="mt-6 text-xl max-w-lg mx-auto opacity-70"
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 0.8, y: 0 }}
+            animate={{ opacity: 0.7, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             Feel free to reach out for collaborations, questions, or just to say hello!
@@ -173,7 +173,7 @@ export default function Contact() {
                       value={formState.name}
                       onChange={handleInputChange}
                       required
-                      className={`w-full px-4 py-3 rounded-lg ${theme.inputBg} backdrop-blur-sm border border-white border-opacity-10 focus:border-opacity-30 outline-none text-white placeholder-white placeholder-opacity-50`}
+                      className={`w-full px-4 py-3 rounded-lg ${theme.inputBg} backdrop-blur-sm border ${theme.borderColor} border-opacity-20 focus:border-opacity-40 outline-none text-gray-200 placeholder-gray-400 placeholder-opacity-50`}
                       placeholder="John Doe"
                       whileFocus={{ scale: 1.01 }}
                     />
@@ -187,7 +187,7 @@ export default function Contact() {
                       value={formState.email}
                       onChange={handleInputChange}
                       required
-                      className={`w-full px-4 py-3 rounded-lg ${theme.inputBg} backdrop-blur-sm border border-white border-opacity-10 focus:border-opacity-30 outline-none text-white placeholder-white placeholder-opacity-50`}
+                      className={`w-full px-4 py-3 rounded-lg ${theme.inputBg} backdrop-blur-sm border ${theme.borderColor} border-opacity-20 focus:border-opacity-40 outline-none text-gray-200 placeholder-gray-400 placeholder-opacity-50`}
                       placeholder="john@example.com"
                       whileFocus={{ scale: 1.01 }}
                     />
@@ -201,7 +201,7 @@ export default function Contact() {
                       onChange={handleInputChange}
                       required
                       rows={4}
-                      className={`w-full px-4 py-3 rounded-lg ${theme.inputBg} backdrop-blur-sm border border-white border-opacity-10 focus:border-opacity-30 outline-none text-white placeholder-white placeholder-opacity-50`}
+                      className={`w-full px-4 py-3 rounded-lg ${theme.inputBg} backdrop-blur-sm border ${theme.borderColor} border-opacity-20 focus:border-opacity-40 outline-none text-gray-200 placeholder-gray-400 placeholder-opacity-50`}
                       placeholder="Hi there! I'd like to talk about..."
                       whileFocus={{ scale: 1.01 }}
                     />
@@ -210,13 +210,13 @@ export default function Contact() {
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`w-full py-3 rounded-lg bg-gradient-to-r ${theme.buttonGradient} text-white font-medium shadow-lg`}
+                    className={`w-full py-3 rounded-lg bg-gradient-to-r ${theme.buttonGradient} text-gray-200 font-medium shadow-lg`}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-gray-200" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
@@ -269,7 +269,7 @@ export default function Contact() {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-4 rounded-lg ${theme.inputBg} text-2xl shadow-lg flex items-center backdrop-blur-sm`}
+                    className={`p-4 rounded-lg text-2xl shadow-lg flex items-center backdrop-blur-sm bg-black bg-opacity-30`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 * index + 0.5 }}

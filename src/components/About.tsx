@@ -25,47 +25,47 @@ const techLogos = [
   { name: "Git", src: "/logos/git.png", color: "#F05032" },
 ];
 
-// Theme options
+// Theme options (updated with dark theme as first option)
 const themes = [
   {
-    name: "Cyberpunk",
-    bgGradient: "from-[#FF007F] to-[#5700FF]",
-    textColor: "text-white",
-    accentColor: "text-[#FFD700]",
-    borderColor: "border-white",
-    logoBg: "bg-white"
-  },
-  {
-    name: "Ocean",
-    bgGradient: "from-[#0093E9] to-[#80D0C7]",
-    textColor: "text-white",
-    accentColor: "text-[#F0F0F0]",
-    borderColor: "border-blue-200",
-    logoBg: "bg-blue-50"
-  },
-  {
-    name: "Sunset",
-    bgGradient: "from-[#FF512F] to-[#F09819]",
-    textColor: "text-white",
-    accentColor: "text-[#FFE082]",
-    borderColor: "border-yellow-200",
-    logoBg: "bg-yellow-50"
-  },
-  {
-    name: "Forest",
-    bgGradient: "from-[#134E5E] to-[#71B280]",
-    textColor: "text-white",
-    accentColor: "text-[#9AE6B4]",
-    borderColor: "border-green-200",
-    logoBg: "bg-green-50"
-  },
-  {
     name: "Dark Mode",
-    bgGradient: "from-[#111827] to-[#1F2937]",
-    textColor: "text-gray-100",
-    accentColor: "text-blue-400",
+    bgGradient: "from-gray-900 to-black",
+    textColor: "text-gray-200",
+    accentColor: "text-purple-400",
     borderColor: "border-gray-700",
     logoBg: "bg-gray-800"
+  },
+  {
+    name: "Midnight",
+    bgGradient: "from-indigo-900 to-purple-900",
+    textColor: "text-gray-100",
+    accentColor: "text-indigo-300",
+    borderColor: "border-indigo-700",
+    logoBg: "bg-indigo-900"
+  },
+  {
+    name: "Hacker",
+    bgGradient: "from-gray-900 to-green-900",
+    textColor: "text-green-400",
+    accentColor: "text-gray-300",
+    borderColor: "border-green-700",
+    logoBg: "bg-gray-900"
+  },
+  {
+    name: "Obsidian",
+    bgGradient: "from-gray-900 to-gray-800",
+    textColor: "text-gray-300",
+    accentColor: "text-blue-400",
+    borderColor: "border-gray-600",
+    logoBg: "bg-gray-800"
+  },
+  {
+    name: "Deep Ocean",
+    bgGradient: "from-blue-900 to-gray-900",
+    textColor: "text-blue-100",
+    accentColor: "text-blue-300",
+    borderColor: "border-blue-800",
+    logoBg: "bg-blue-900"
   }
 ];
 
@@ -87,7 +87,7 @@ export default function About() {
     >
       {/* Theme Switcher */}
       <motion.button
-        className="absolute top-8 right-8 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-opacity-30 transition-all"
+        className="absolute top-8 right-8 bg-gray-800 bg-opacity-60 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-opacity-80 transition-all"
         onClick={cycleTheme}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -100,20 +100,22 @@ export default function About() {
         className="text-5xl font-extrabold mb-6"
         whileHover={{ scale: 1.1, rotate: 3 }}
       >
-        About Me 🚀
+        About Me 💻
       </motion.h2>
 
       {/* DESCRIPTION */}
       <motion.p
-        className={`text-xl max-w-3xl mx-auto ${theme.accentColor} leading-relaxed mb-12`}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.3 }}
-      >
-        I'm a passionate <strong>web developer</strong> specializing in <strong>React, TypeScript, 
-        and Tailwind CSS</strong>. I love crafting <strong>responsive</strong>, <strong>interactive</strong>, and{" "}
-        <strong>visually stunning</strong> user interfaces that leave an impact! ✨🚀
-      </motion.p>
+  className={`text-xl max-w-3xl mx-auto ${theme.accentColor} leading-relaxed mb-12`}
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1, delay: 0.3 }}
+>
+  I'm a passionate <strong>full-stack developer</strong> with expertise in <strong>React</strong>, <strong>Vue</strong>, 
+  <strong> Node.js</strong>, and <strong>Laravel</strong>. I create <strong>real-time applications</strong> using 
+  <strong> WebRTC</strong> and <strong>Socket.io</strong>, style with <strong>Tailwind</strong> and <strong>Bootstrap</strong>, 
+  and manage data with <strong>MySQL</strong> and <strong>PostgreSQL</strong>. From <strong>TypeScript</strong> to 
+  <strong> Java</strong>, I build <strong>responsive</strong>, <strong>secure</strong>, and <strong>scalable</strong> solutions. ✨💻
+</motion.p>
 
       {/* SKILLS SECTION */}
       <motion.div 
@@ -123,7 +125,7 @@ export default function About() {
         transition={{ delay: 0.6 }}
       >
         <h3 className="text-2xl font-bold mb-4">My Tech Stack</h3>
-        <div className="w-20 h-1 bg-white mx-auto mb-8 rounded-full"></div>
+        <div className="w-20 h-1 bg-purple-500 mx-auto mb-8 rounded-full"></div>
       </motion.div>
 
       {/* TECHNOLOGY LOGOS */}

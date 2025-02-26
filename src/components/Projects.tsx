@@ -53,42 +53,42 @@ const projectsData = [
   }
 ];
 
-// Theme options
+// Theme options with dark themes
 const themes = [
   {
-    name: "Cyberpunk",
-    bgGradient: "from-[#5700FF] to-[#FF007F]",
-    cardBg: "bg-white",
-    textColor: "text-black",
-    accentColor: "from-[#FFD700] to-[#FF007F]",
-    buttonBg: "bg-[#FF007F]",
+    name: "Dark Mode",
+    bgGradient: "from-gray-900 to-black",
+    cardBg: "bg-gray-800",
+    textColor: "text-gray-200",
+    accentColor: "from-purple-900 to-purple-600",
+    buttonBg: "bg-purple-600",
     buttonText: "text-white"
   },
   {
-    name: "Midnight",
-    bgGradient: "from-[#0F2027] to-[#203A43]",
+    name: "Midnight Blue",
+    bgGradient: "from-gray-900 to-blue-900",
     cardBg: "bg-gray-800",
     textColor: "text-gray-100",
-    accentColor: "from-[#3A1C71] to-[#D76D77]",
-    buttonBg: "bg-indigo-600",
+    accentColor: "from-blue-800 to-indigo-600",
+    buttonBg: "bg-blue-600",
     buttonText: "text-white"
   },
   {
-    name: "Sunset",
-    bgGradient: "from-[#FF512F] to-[#DD2476]",
-    cardBg: "bg-orange-50",
-    textColor: "text-gray-800",
-    accentColor: "from-[#FCAF45] to-[#FF512F]",
-    buttonBg: "bg-orange-500",
-    buttonText: "text-white"
+    name: "Dark Tech",
+    bgGradient: "from-black to-gray-900",
+    cardBg: "bg-gray-900",
+    textColor: "text-gray-200",
+    accentColor: "from-gray-800 to-gray-700",
+    buttonBg: "bg-gray-700",
+    buttonText: "text-gray-200"
   },
   {
-    name: "Nature",
-    bgGradient: "from-[#134E5E] to-[#71B280]",
-    cardBg: "bg-green-50",
-    textColor: "text-gray-800",
-    accentColor: "from-[#2E7D32] to-[#81C784]",
-    buttonBg: "bg-green-600",
+    name: "Deep Purple",
+    bgGradient: "from-indigo-900 to-purple-900",
+    cardBg: "bg-indigo-900",
+    textColor: "text-gray-100",
+    accentColor: "from-purple-800 to-indigo-800",
+    buttonBg: "bg-purple-700",
     buttonText: "text-white"
   }
 ];
@@ -136,14 +136,14 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className={`min-h-screen flex flex-col justify-center items-center px-8 py-16 text-center bg-gradient-to-b ${theme.bgGradient} text-white relative`}
+      className={`min-h-screen flex flex-col justify-center items-center px-8 py-16 text-center bg-gradient-to-b ${theme.bgGradient} text-gray-200 relative`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
       {/* Theme Switcher */}
       <motion.button
-        className="absolute top-8 right-8 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-opacity-30 transition-all"
+        className="absolute top-8 right-8 bg-gray-800 bg-opacity-60 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium shadow-lg hover:bg-opacity-80 transition-all"
         onClick={cycleTheme}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -158,10 +158,10 @@ export default function Projects() {
           whileHover={{ scale: 1.1, rotate: 2 }}
           transition={{ duration: 0.3 }}
         >
-          🚀 My Projects  
+          💻 My Projects  
         </motion.h2>
         <motion.div 
-          className="w-24 h-1 bg-white mx-auto rounded-full"
+          className="w-24 h-1 bg-purple-500 mx-auto rounded-full"
           initial={{ width: 0 }}
           animate={{ width: 96 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -178,7 +178,7 @@ export default function Projects() {
         {projectsData.slice(0, visibleProjects).map((project) => (
           <motion.div
             key={project.id}
-            className={`relative ${theme.cardBg} ${theme.textColor} p-8 rounded-2xl shadow-xl overflow-hidden cursor-pointer`}
+            className={`relative ${theme.cardBg} ${theme.textColor} p-8 rounded-2xl shadow-xl overflow-hidden cursor-pointer border border-gray-700`}
             variants={itemVariants}
             whileHover={{
               scale: 1.05,
@@ -188,32 +188,32 @@ export default function Projects() {
           >
             {/* PROJECT IMAGE (Placeholder) */}
             <motion.div 
-              className="h-48 -mx-8 -mt-8 mb-6 bg-gray-300 overflow-hidden"
+              className="h-48 -mx-8 -mt-8 mb-6 bg-gray-900 overflow-hidden"
               whileHover={{ scale: 1.05 }}
             >
               <div 
                 className="w-full h-full"
                 style={{ 
-                  background: `linear-gradient(135deg, ${project.color}80, ${project.color})`,
+                  background: `linear-gradient(135deg, ${project.color}40, ${project.color}90)`,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center'
                 }}
               >
-                <span className="text-5xl opacity-30">📱</span>
+                <span className="text-5xl opacity-30">💻</span>
               </div>
             </motion.div>
 
             {/* ANIMATED BACKGROUND */}
             <motion.div
               className={`absolute inset-0 bg-gradient-to-r ${theme.accentColor} opacity-0`}
-              whileHover={{ opacity: 0.15 }}
+              whileHover={{ opacity: 0.2 }}
               transition={{ duration: 0.5 }}
             />
 
             {/* PROJECT CONTENT */}
             <h3 className="text-2xl font-bold relative mb-3">{project.title}</h3>
-            <p className={`${theme.textColor === 'text-black' ? 'text-gray-700' : 'text-gray-300'} mt-2 relative text-sm mb-4`}>
+            <p className="text-gray-400 mt-2 relative text-sm mb-4">
               {project.description}
             </p>
             
@@ -222,10 +222,10 @@ export default function Projects() {
               {project.tags.map((tag, index) => (
                 <motion.span
                   key={index}
-                  className="px-3 py-1 text-xs rounded-full bg-opacity-20"
+                  className="px-3 py-1 text-xs rounded-full bg-opacity-20 text-gray-300"
                   style={{ 
-                    backgroundColor: `${project.color}30`,
-                    border: `1px solid ${project.color}60`
+                    backgroundColor: `${project.color}20`,
+                    border: `1px solid ${project.color}40`
                   }}
                   whileHover={{ 
                     scale: 1.1, 

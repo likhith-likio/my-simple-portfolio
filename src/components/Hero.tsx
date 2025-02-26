@@ -22,7 +22,7 @@ export default function Hero() {
   
   return (
     <motion.section
-      className="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-[#007FFF] to-[#FFD700] text-white text-center relative overflow-hidden"
+      className="h-screen flex flex-col items-center justify-center bg-gradient-to-r from-gray-900 to-black text-gray-200 text-center relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
@@ -31,7 +31,7 @@ export default function Hero() {
       {[...Array(15)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-white bg-opacity-20"
+          className="absolute rounded-full bg-purple-500 bg-opacity-10"
           style={{
             width: Math.random() * 100 + 20,
             height: Math.random() * 100 + 20,
@@ -41,7 +41,7 @@ export default function Hero() {
           initial={{ scale: 0, opacity: 0 }}
           animate={{ 
             scale: [0, 1, 0.8, 1],
-            opacity: [0, 0.7, 0.4, 0],
+            opacity: [0, 0.3, 0.2, 0],
             y: [0, -100],
           }}
           transition={{ 
@@ -53,7 +53,7 @@ export default function Hero() {
       ))}
 
       <motion.div
-        className="relative z-10 p-8 rounded-lg bg-black bg-opacity-10 backdrop-filter backdrop-blur-sm border border-white border-opacity-20"
+        className="relative z-10 p-8 rounded-lg bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-sm border border-gray-700"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.3, duration: 0.8 }}
@@ -71,13 +71,13 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
           >
             <span 
-              className="text-[#00FFFF] relative"
+              className="text-purple-400 relative"
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
             >
               Likhith
               <motion.span
-                className="absolute -bottom-1 left-0 w-full h-1 bg-[#00FFFF]"
+                className="absolute -bottom-1 left-0 w-full h-1 bg-purple-400"
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: hovered ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
@@ -96,17 +96,17 @@ export default function Hero() {
               repeatDelay: 5
             }}
           >
-            🚀
+            💻
           </motion.span>
         </motion.h1>
         
         <motion.p
-          className="text-xl mt-4 mb-6"
+          className="text-xl mt-4 mb-6 text-gray-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          Welcome to my crazy, animated portfolio!
+          Welcome to my dark-themed portfolio!
         </motion.p>
         
         <motion.div
@@ -116,7 +116,7 @@ export default function Hero() {
           transition={{ delay: 1 }}
         >
           <motion.button
-            className="px-6 py-3 bg-white text-[#007FFF] font-bold rounded-full hover:bg-opacity-90 transition-colors cursor-pointer"
+            className="px-6 py-3 bg-purple-600 text-white font-bold rounded-full hover:bg-purple-700 transition-colors cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToProjects}
@@ -125,7 +125,7 @@ export default function Hero() {
           </motion.button>
           
           <motion.button
-            className="px-6 py-3 bg-transparent border-2 border-white font-bold rounded-full hover:bg-white hover:bg-opacity-10 transition-colors cursor-pointer"
+            className="px-6 py-3 bg-transparent border-2 border-purple-500 text-purple-400 font-bold rounded-full hover:bg-purple-900 hover:bg-opacity-20 transition-colors cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToContact}
@@ -155,7 +155,7 @@ export default function Hero() {
         }}
       >
         <svg 
-          className="w-6 h-6 text-white" 
+          className="w-6 h-6 text-purple-400" 
           fill="none" 
           viewBox="0 0 24 24" 
           stroke="currentColor"
