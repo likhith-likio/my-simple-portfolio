@@ -58,7 +58,7 @@ export default function Contact() {
     setCurrentTheme((prev) => (prev + 1) % themes.length);
   };
   
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormState(prev => ({
       ...prev,
@@ -66,7 +66,7 @@ export default function Contact() {
     }));
   };
   
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     

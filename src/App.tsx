@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     const sections = gsap.utils.toArray("section");
 
-    sections.forEach((section: any, index) => {
+    sections.forEach((section: any) => {
       gsap.to(section, {
         scrollTrigger: {
           trigger: section,
@@ -29,7 +29,7 @@ function App() {
   }, []);
 
   return (
-    <div className="font-sans bg-gray-100 text-gray-900">
+    <div className=" bg-gray-100 text-gray-900">
       <Navbar />
       
       {/* Scroll Container */}
